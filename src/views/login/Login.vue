@@ -1,20 +1,19 @@
 <template>
   <div class="layout">
     <canvas id="particle-canvas" width="910" height="875"></canvas>
-    <div class="bg">
-
-    </div>
 
     <div class="main">
-  
+
       <span class="manager-style">hotel管理系统</span>
       <el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm" size="mini" label-width="100px"
         class="demo-ruleForm">
         <el-form-item label="账号" prop="userName">
-          <el-input type="password" v-model="ruleForm.userName" placeholder="admin" autocomplete="off" style="width: 80%"></el-input>
+          <el-input type="password" v-model="ruleForm.userName" placeholder="admin" autocomplete="off"
+            style="width: 80%"></el-input>
         </el-form-item>
         <el-form-item label="密码" prop="password">
-          <el-input type="password" v-model="ruleForm.password" placeholder="123"  autocomplete="off" style="width: 80%"></el-input>
+          <el-input type="password" v-model="ruleForm.password" placeholder="123" autocomplete="off" style="width: 80%">
+          </el-input>
         </el-form-item>
         <el-form-item label="" prop="checked">
           <el-checkbox v-model="ruleForm.checked">记住我</el-checkbox>
@@ -88,7 +87,9 @@
           if (valid) {
             // alert('submit!');
             // 请求接口  实现登录
-            this.$router.push({path: '/layout'})
+            this.$router.push({
+              path: '/layout'
+            })
           } else {
             console.log('error submit!!');
             return false;
