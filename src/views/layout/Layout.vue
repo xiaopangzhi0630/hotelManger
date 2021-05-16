@@ -2,38 +2,53 @@
   <div class="layout">
     <!-- 左侧菜单 -->
     <div class="left">
-
       <div class="aside">
         <div class="logo">
           Bing
         </div>
-        <el-menu default-active="2" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose"
-          :collapse="isCollapse" background-color="#003a6c" text-color="#fff" active-text-color="#ffd04b">
-          <el-submenu index="1">
+        <el-menu default-active="/layout/role" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose"
+          :collapse="isCollapse" router unique-opened background-color="#003a6c" text-color="#fff"
+          active-text-color="#ffd04b">
+          <el-submenu index="/layout/role">
             <template slot="title">
-              <i class="el-icon-location"></i>
-              <span>导航一</span>
+              <i class="el-icon-user-solid"></i>
+              <span>账号管理</span>
             </template>
-            <el-menu-item index="1-1">选项1</el-menu-item>
-            <el-menu-item index="1-2">选项2</el-menu-item>
-            <el-menu-item index="1-3">选项3</el-menu-item>
-            <el-submenu index="1-4">
+            <el-menu-item index="/layout/role">角色管理</el-menu-item>
+            <el-menu-item index="/layout/account">账号管理</el-menu-item>
+            <!-- <el-submenu index="1-4">
               <template slot="title">选项4</template>
               <el-menu-item index="1-4-1">选项1</el-menu-item>
-            </el-submenu>
+            </el-submenu> -->
           </el-submenu>
-          <el-menu-item index="2">
-            <i class="el-icon-menu"></i>
-            <span slot="title">导航二</span>
-          </el-menu-item>
-          <el-menu-item index="3" disabled>
-            <i class="el-icon-document"></i>
-            <span slot="title">导航三</span>
-          </el-menu-item>
-          <el-menu-item index="4">
-            <i class="el-icon-setting"></i>
-            <span slot="title">导航四</span>
-          </el-menu-item>
+          <el-submenu index="2">
+            <template slot="title">
+              <i class="el-icon-s-home"></i>
+              <span slot="title">客房管理</span>
+            </template>
+            <el-menu-item index="2-1">选项1</el-menu-item>
+            <el-menu-item index="2-2">选项2</el-menu-item>
+            <el-menu-item index="2-3">选项3</el-menu-item>
+          </el-submenu>
+          <el-submenu index="3">
+            <template slot="title">
+              <i class="el-icon-s-custom"></i>
+              <span slot="title">客户管理</span>
+            </template>
+            <el-menu-item index="3-1">选项1</el-menu-item>
+            <el-menu-item index="3-2">选项2</el-menu-item>
+            <el-menu-item index="3-3">选项3</el-menu-item>
+          </el-submenu>
+          <el-submenu index="4">
+            <template slot="title">
+              <i class="el-icon-setting"></i>
+              <span slot="title">权限管理</span>
+            </template>
+            <el-menu-item index="4-1">选项1</el-menu-item>
+            <el-menu-item index="4-2">选项2</el-menu-item>
+            <el-menu-item index="4-3">选项3</el-menu-item>
+          </el-submenu>
+
         </el-menu>
       </div>
 
@@ -46,7 +61,7 @@
         </div>
 
         <el-menu :default-active="activeIndex2" class="el-menu-demo" mode="horizontal" @select="handleSelect"
-          background-color="#003a6c" text-color="#fff" active-text-color="#ffd04b" style="height: 100%;">
+          background-color="#003a6c" text-color="#fff" active-text-color="#ffd04b">
           <el-menu-item index="1">处理中心</el-menu-item>
           <el-submenu index="2">
             <template slot="title">我的工作台</template>
@@ -67,7 +82,9 @@
 
 
       </div>
-      <div class="nav"></div>
+      <div class="nav">
+        <router-view></router-view>
+      </div>
     </div>
   </div>
 </template>
@@ -113,6 +130,7 @@
 <style lang="scss" scoped>
   .layout {
     width: 100vw;
+    height: 100vh;
     display: flex;
 
     // 左侧
@@ -130,19 +148,21 @@
         text-align: center;
         padding: 10px;
         border: 1px solid #ccc;
+        border-radius: 3px;
         margin: 0 auto;
         box-sizing: border-box;
       }
 
       .aside {
-        height: calc(100vh - 60px);
+        // height: calc(100vh - 60px);
         padding-top: 10px;
+
 
         // 折叠菜单关键代码, 样式
         .el-menu-vertical-demo:not(.el-menu--collapse) {
           width: 230px;
           min-height: 400px;
-          height: 100%;
+          // height: 100%;
         }
 
         .el-menu {
@@ -155,6 +175,9 @@
     // 右侧
     .right {
       flex: 1;
+      // height: calc(100vh -60px);
+      height: 100%;
+      width: calc(100vw - 235px);
 
       .top {
         display: flex;
@@ -187,6 +210,13 @@
       .bg>i:hover {
         color: #003a6c;
         background-color: #ece5e5fa;
+      }
+
+      .nav {
+        // box-sizing: border-box;
+        padding: 15px;
+        height: calc(100vh - 90px);
+        background: rgb(245, 242, 235);
       }
     }
 

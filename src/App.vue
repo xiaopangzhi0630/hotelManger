@@ -13,20 +13,21 @@
     outline: none;
     text-decoration: none;
   }
+  
 
-  .flex {
-    display: flex;
-  }
+  // .flex {
+  //   display: flex;
+  // }
 
-  .j-c {
-    justify-content: center;
-  }
+  // .j-c {
+  //   justify-content: center;
+  // }
 
-  .j-s {
-    justify-content: space-between;
-  }
+  // .j-s {
+  //   justify-content: space-between;
+  // }
 
-  .a-c {
-    align-items: center;
-  }
+  // .a-c {
+  //   align-items: center;
+  // }
 </style>

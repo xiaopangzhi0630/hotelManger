@@ -1,0 +1,13 @@
+html {
+  box-sizing: border-box;
+}
+
+#app .app-layout {
+  height: calc(100vh - 90px);
+  background: white;
+  overflow-x: hidden;
+  overflow-y: auto;
+  // border-radius: 3px;
+  // padding: 10px 20px;
+  // box-sizing: border-box;
+}
