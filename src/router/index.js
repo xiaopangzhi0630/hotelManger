@@ -29,9 +29,18 @@ const routes = [
         component: () => import('@v/role/Account.vue'),
         meta: { title: '账号管理' }
       },
+      {
+        path: 'roomManager',
+        component: () => import('@v/roomManager/index.vue'),
+        meta: { title: '房间管理' }
+      },
       // account
     ],
 
+  },
+  {
+    path: '*',
+    component: () =>import ('@v/404/error.vue')
   }
 ]
 

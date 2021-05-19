@@ -16,26 +16,33 @@
         </div>
       </el-col>
     </el-row>
-    <el-table :data="tableData" border style="margin-top: 20px">
-      <el-table-column fixed prop="date" label="日期" width="150">
-      </el-table-column>
-      <el-table-column prop="name" label="姓名" width="120">
-      </el-table-column>
-      <el-table-column prop="province" label="省份" width="120">
-      </el-table-column>
-      <el-table-column prop="city" label="市区" width="120">
-      </el-table-column>
-      <el-table-column prop="address" label="地址" width="300">
-      </el-table-column>
-      <el-table-column prop="zip" label="邮编">
-      </el-table-column>
-      <el-table-column fixed="right" label="操作" width="100">
-        <template slot-scope="scope">
-          <el-button @click="handleClick(scope.row)" type="text" size="small">查看</el-button>
-          <el-button type="text" size="small">编辑</el-button>
-        </template>
-      </el-table-column>
-    </el-table>
+    <ul class="listSelectUi">
+      <li class="listSelectLi">
+        <ul>
+          <li>日期</li>
+          <li>姓名</li>
+          <li>省份</li>
+          <li>市区</li>
+          <li>地址</li>
+          <li>邮编</li>
+          <li>操作</li>
+        </ul>
+      </li>
+      <li v-for="(ele,index) in tableData" :key="index">
+        <ul class="listSelect">
+          <li>{{ele.date}}</li>
+          <li>{{ele.name}}</li>
+          <li>{{ele.province}}</li>
+          <li>{{ele.city}}</li>
+          <li>{{ele.address}}</li>
+          <li>{{ele.zip}}</li>
+          <li>
+            <span @click="getTableDatac(index)">查看</span>
+            <span @click="getTableDatac1(index)">编辑</span>
+          </li>
+        </ul>
+      </li>
+    </ul>
   </div>
 
 </template>
@@ -43,6 +50,12 @@
 <script>
   export default {
     methods: {
+      getTableDatac(index){
+        console.log(this.tableData[index])
+      },
+      getTableDatac1(index) {
+        console.log(this.tableData[index])
+      },
       handleClick(row) {
         console.log(row);
       },
@@ -123,6 +136,65 @@
   }
 </script>
 
-<style lang="sass" scoped>
-
+<style>
+*{
+  padding: 0;
+  margin: 0;
+}
+.listSelectUi .listSelect {
+  width: 100%;
+}
+li {
+  list-style:none;
+  display: inline-block;
+  line-height: 57px;
+}
+.listSelect li {
+  height: 57px;
+  border-bottom: 1px solid #EBEEF5;
+  padding-left: 10px;
+}
+.listSelectLi li {
+  padding-left: 10px;
+}
+.listSelectLi {
+  height: 57px;
+  border-bottom: 1px solid #EBEEF5;
+}
+.listSelect li:nth-child(1),.listSelectLi li:nth-child(1){
+  width: 137px;
+}
+.listSelect li:nth-child(2),.listSelectLi li:nth-child(2){
+  width: 110px;
+}
+.listSelect li:nth-child(3),.listSelectLi li:nth-child(3){
+  width: 110px;
+}
+.listSelect li:nth-child(4),.listSelectLi li:nth-child(4){
+  width: 110px;
+}
+.listSelect li:nth-child(5),.listSelectLi li:nth-child(5){
+  width: 290px;
+}
+.listSelect li:nth-child(6),.listSelectLi li:nth-child(6){
+  width: 338px;
+}
+.listSelect li:nth-child(7),.listSelectLi li:nth-child(7){
+  width: 90px;
+}
+.listSelect li:nth-child(7) {
+  padding-left: 0;
+  width: 100px;
+}
+.listSelectLi li:nth-child(7) {
+  width: 100px;
+  padding-left: 0;
+}
+.listSelect li:nth-child(7) span {
+  font-size: 12px;
+  color: #409EFF;
+}
+.listSelect li:nth-child(7) span:nth-child(1){
+  margin-right: 10px;
+}
 </style>>

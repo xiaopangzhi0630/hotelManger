@@ -1,13 +1,13 @@
 <template>
   <div class="layout">
     <!-- 左侧菜单 -->
-    <div class="left">
+    <div class="left" :style={backgroundColor:themeColor}>
       <div class="aside">
         <div class="logo">
           Bing
         </div>
-        <el-menu default-active="/layout/role" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose"
-          :collapse="isCollapse" router unique-opened background-color="#003a6c" text-color="#fff"
+        <el-menu :default-active="currentActiveMenu" @select="changeActiveMenu" class="el-menu-vertical-demo"
+          :collapse="isCollapse" router unique-opened :background-color='themeColor' text-color="#fff"
           active-text-color="#ffd04b">
           <el-submenu index="/layout/role">
             <template slot="title">
@@ -26,7 +26,7 @@
               <i class="el-icon-s-home"></i>
               <span slot="title">客房管理</span>
             </template>
-            <el-menu-item index="2-1">选项1</el-menu-item>
+            <el-menu-item index="/layout/roomManager">大师即可打开</el-menu-item>
             <el-menu-item index="2-2">选项2</el-menu-item>
             <el-menu-item index="2-3">选项3</el-menu-item>
           </el-submenu>
@@ -53,30 +53,40 @@
       </div>
 
     </div>
-
+    <!-- 右侧导航 -->
     <div class="right">
-      <div class="top">
+      <div class="top" :style={backgroundColor:themeColor}>
         <div class="bg" @click="isShowMenu">
           <i :class="!isCollapse? 'el-icon-s-fold' : 'el-icon-s-unfold'"></i>
         </div>
 
-        <el-menu :default-active="activeIndex2" class="el-menu-demo" mode="horizontal" @select="handleSelect"
-          background-color="#003a6c" text-color="#fff" active-text-color="#ffd04b">
-          <el-menu-item index="1">处理中心</el-menu-item>
-          <el-submenu index="2">
-            <template slot="title">我的工作台</template>
-            <el-menu-item index="2-1">选项1</el-menu-item>
-            <el-menu-item index="2-2">选项2</el-menu-item>
-            <el-menu-item index="2-3">选项3</el-menu-item>
-            <el-submenu index="2-4">
-              <template slot="title">选项4</template>
-              <el-menu-item index="2-4-1">选项1</el-menu-item>
-              <el-menu-item index="2-4-2">选项2</el-menu-item>
-              <el-menu-item index="2-4-3">选项3</el-menu-item>
-            </el-submenu>
+        <el-menu class="el-menu-demo" mode="horizontal" :background-color='themeColor' text-color="#fff" router
+          active-text-color="#ffd04b">
+          <el-menu-item index="/layout"> <i class="el-icon-s-home"></i>Home</el-menu-item>
+          <el-menu-item index="2"> <i class="el-icon-s-comment"></i>Message</el-menu-item>
+          <el-menu-item index="3"> <i class="el-icon-message"></i>Email</el-menu-item>
+          <el-submenu index="4">
+            <template slot="title">
+              <i class="el-icon-help"></i>
+              <span slot="title">Theme</span>
+            </template>
+            <el-menu-item v-for="(item,i) in theme" :key="i" @click="handleChangeTheme(item.value)">{{item.name}}
+            </el-menu-item>
+            <!-- <el-menu-item index="4-2">灰色主题</el-menu-item>
+            <el-menu-item index="4-3">红色主题</el-menu-item>
+            <el-menu-item index="4-4">黑色主题</el-menu-item>
+            <el-menu-item index="4-5">绿色主题</el-menu-item> -->
           </el-submenu>
-          <el-menu-item index="3" disabled>消息中心</el-menu-item>
-          <el-menu-item index="4"><a href="https://www.ele.me" target="_blank">订单管理</a></el-menu-item>
+          <el-submenu index="5">
+            <template slot="title">
+              <i class="el-icon-user"></i>
+              <span slot="title">管理员</span>
+            </template>
+            <el-menu-item index="5-1">个人中心</el-menu-item>
+            <el-menu-item index="5-2">修改密码</el-menu-item>
+            <el-menu-item index="5-3">退出系统</el-menu-item>
+          </el-submenu>
+
         </el-menu>
 
 
@@ -90,30 +100,39 @@
 </template>
 
 <script>
+  // 导入vuex的映射函数
+  import {
+    mapState
+  } from 'vuex';
+
   export default {
     data() {
       return {
         isCollapse: false,
-        activeIndex2: '',
-
-        openMenuStyle: {
-          // height: '100vh',
-          width: '230px'
-        },
-        closeMenuStlye: {
-          //  height: '100vh',
-        }
-
+        currentActiveMenu: sessionStorage.getItem('defaultMenu') || '',
+        themeColor: localStorage.getItem('theme') || '#003a6c',
       }
     },
+
+    computed: {
+      ...mapState('theme', ['theme'])
+    },
+
+    mounted() {
+      console.log(this.theme);
+    },
+
     methods: {
-      handleOpen(key, keyPath) {
-        console.log(key, keyPath);
+      changeActiveMenu(indexPath) {
+        console.log(indexPath);
+        sessionStorage.setItem('defaultMenu', indexPath);
       },
-      handleClose(key, keyPath) {
-        console.log(key, keyPath);
+
+      // 改变颜色
+      handleChangeTheme(color) {
+        this.themeColor = color;
+        localStorage.setItem('theme', color);
       },
-      handleSelect() {},
 
       // 菜单栏展开与收缩
       isShowMenu() {
@@ -136,7 +155,7 @@
     // 左侧
     .left {
       // width: 230px;
-      background: #003a6c;
+      // background: #003a6c;
       // height: calc(100vh -30px);
       height: 100vh;
       overflow: auto;
@@ -185,6 +204,8 @@
         align-items: center;
         background: #003a6c;
         height: 60px;
+        padding-right: 20px;
+        box-sizing: border-box;
       }
 
       .bg {
@@ -213,7 +234,6 @@
       }
 
       .nav {
-        // box-sizing: border-box;
         padding: 15px;
         height: calc(100vh - 90px);
         background: rgb(245, 242, 235);

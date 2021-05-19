@@ -44,7 +44,7 @@
   export default {
     methods: {
       handleClick(row) {
-        console.log(row);
+        console.log('row', row);
       }
     },
 
@@ -52,14 +52,14 @@
       return {
         input3: '',
         tableData: [{
-          date: '2016-05-02',
+          date: '1111',
           name: '王小虎',
           province: '上海',
           city: '普陀区',
           address: '上海市普陀区金沙江路 1518 弄',
           zip: 200333
         }, {
-          date: '2016-05-04',
+          date: '11dfgdfgdf',
           name: '王小虎',
           province: '上海',
           city: '普陀区',
