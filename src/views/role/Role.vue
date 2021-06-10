@@ -17,7 +17,7 @@
       </el-col>
     </el-row>
     <el-table :data="tableData" border style="margin-top: 20px">
-      <el-table-column fixed prop="date" label="日期" width="150">
+      <el-table-column prop="date" label="日期" width="150">
       </el-table-column>
       <el-table-column prop="name" label="姓名" width="120">
       </el-table-column>
