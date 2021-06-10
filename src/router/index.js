@@ -1,21 +1,32 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+// // 进度条
+import NProgress from 'nprogress'
+import 'nprogress/nprogress.css'
 
 Vue.use(VueRouter)
 
 // 路由信息数组
 const routes = [
-  // 登录页
   {
     path: '/',
+    // redirect: '/layout',
+    component: () => import('@v/dasboard/Dasboard.vue'),
+    // meta: { title: '首页' }
+  },
+  // 登录页
+  {
+    path: '/login',
     name: 'Login',
-    redirect: '/layout',
+    // redirect: '/layout',
     component: () => import('@v/login/Login.vue'),
     meta: { title: '登录' }
   },
+  // 后台管理布局页面
   {
     path: '/layout',
     name: 'Layout',
+    // redirect: '/role',
     component: () => import('@v/layout/Layout.vue'),
     meta: { title: '首页' },
     children: [
@@ -48,6 +59,15 @@ const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
+})
+
+router.beforeEach((to, from, next) => {
+  NProgress.start()
+  next()
+})
+
+router.afterEach(() => {
+  NProgress.done()
 })
 
 export default router

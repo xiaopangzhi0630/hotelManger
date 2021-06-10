@@ -5,7 +5,7 @@ export default {
     theme: [
       {
         name: '飞燕草主题',
-        value: '#003a6c'
+        value: '#065279'
       },
       {
         name: '水泥灰主题',
@@ -17,7 +17,8 @@ export default {
       },
       {
         name: '云水蓝主题',
-        value: '#baccd9'
+        // value: '#baccd9'
+        value: '#177cb0'
       },
 
     ]

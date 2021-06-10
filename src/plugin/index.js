@@ -8,3 +8,5 @@ Vue.use(ElementUI);
 
 
 // 注册我的自定义插件
+import myPlugin from './myPlugin.js';
+Vue.use(myPlugin)
