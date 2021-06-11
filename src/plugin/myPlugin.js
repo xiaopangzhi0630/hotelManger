@@ -20,7 +20,7 @@ export default {
         },
 
         // 提示消息
-        $msg_success(message, duration = 2000) {
+        $msg_s(message, duration = 2000) {
           this.$message({
             showClose: true,
             message,
@@ -28,7 +28,7 @@ export default {
           });
         },
 
-        $msg_error(message, duration = 2000) {
+        $msg_e(message, duration = 2000) {
           this.$message({
             showClose: true,
             message,
@@ -36,7 +36,7 @@ export default {
           });
         },
 
-        $msg_warning(message, duration = 2000) {
+        $msg_w(message, duration = 2000) {
           this.$message({
             showClose: true,
             message,

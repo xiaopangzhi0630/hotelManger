@@ -14,7 +14,6 @@
           :background-color="themeColor"
           text-color="#fff"
           active-text-color="#ffd04b"
-         
         >
           <el-submenu index="/layout/role">
             <template slot="title">
@@ -33,11 +32,9 @@
               <i class="el-icon-s-home"></i>
               <span slot="title">客房管理</span>
             </template>
-            <el-menu-item index="/layout/roomManager"
-              >大师即可打开</el-menu-item
-            >
-            <el-menu-item index="2-2">选项2</el-menu-item>
-            <el-menu-item index="2-3">选项3</el-menu-item>
+            <!-- <el-menu-item index="/layout/roomTest">打开测试</el-menu-item> -->
+            <el-menu-item index="/layout/roomType">客房类型</el-menu-item>
+            <el-menu-item index="/layout/roomManager">客房管理</el-menu-item>
           </el-submenu>
           <el-submenu index="3">
             <template slot="title">
@@ -66,8 +63,7 @@
         <div class="bg" @click="isShowMenu">
           <i :class="!isCollapse ? 'el-icon-s-fold' : 'el-icon-s-unfold'"></i>
         </div>
-        
-          
+
         <el-menu
           class="el-menu-demo"
           mode="horizontal"
@@ -77,9 +73,15 @@
           active-text-color="#ffd04b"
           style="min-width: 640px"
         >
-          <el-menu-item index="/layout"><i class="el-icon-s-home"></i>Home</el-menu-item>
-          <el-menu-item index="2"><i class="el-icon-s-comment"></i>Message</el-menu-item>
-          <el-menu-item index="3"><i class="el-icon-message"></i>Email</el-menu-item>
+          <el-menu-item index="/layout"
+            ><i class="el-icon-s-home"></i>Home</el-menu-item
+          >
+          <el-menu-item index="2"
+            ><i class="el-icon-s-comment"></i>Message</el-menu-item
+          >
+          <el-menu-item index="3"
+            ><i class="el-icon-message"></i>Email</el-menu-item
+          >
           <el-submenu index="4">
             <template slot="title">
               <i class="el-icon-help"></i>
@@ -136,11 +138,13 @@ export default {
   methods: {
     // 退出登录
     handleSignOut() {
-      localStorage.clear()
-      sessionStorage.clear()
+      localStorage.clear();
+      sessionStorage.clear();
+     
       this.$router.push({
         path: "/login",
       });
+       this.$msg_s('退出成功！')
     },
     // 菜单缓存
     changeActiveMenu(indexPath) {

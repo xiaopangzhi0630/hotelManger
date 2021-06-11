@@ -1,7 +1,7 @@
 <template>
   <div class="app-layout">
-
-    <el-row :gutter="20">
+    客房类型
+    <!-- <el-row :gutter="20">
       <el-col :span="16">
         <div class="grid-content bg-purple">
           <el-button type="primary">添加</el-button>
@@ -15,7 +15,7 @@
           </el-input>
         </div>
       </el-col>
-    </el-row>
+    </el-row> -->
     <el-table :data="tableData" border style="width: 100%; margin-top: 20px">
       <el-table-column fixed prop="date" label="日期" width="150">
       </el-table-column>

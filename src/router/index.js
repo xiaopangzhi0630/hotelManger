@@ -19,39 +19,53 @@ const routes = [
     path: '/login',
     name: 'Login',
     // redirect: '/layout',
+    meta: { title: '登录' },
     component: () => import('@v/login/Login.vue'),
-    meta: { title: '登录' }
   },
   // 后台管理布局页面
   {
     path: '/layout',
     name: 'Layout',
     // redirect: '/role',
+    meta: { title: 'Bing酒店管理系统' },
     component: () => import('@v/layout/Layout.vue'),
-    meta: { title: '首页' },
     children: [
       {
         path: 'role',
+        meta: { title: '角色管理' },
         component: () => import('@v/role/Role.vue'),
-        meta: { title: '角色管理' }
       },
       {
         path: 'account',
+        meta: { title: '账号管理' },
         component: () => import('@v/role/Account.vue'),
-        meta: { title: '账号管理' }
+      },
+      {
+        path: 'roomTest',
+        meta: { title: '测试' },
+        component: () => import('@v/roomTest/index.vue'),
+      },
+      {
+        path: 'roomType',
+        meta: { title: '客房类型' },
+        component: () => import('@v/roomType/RoomType.vue'),
       },
       {
         path: 'roomManager',
-        component: () => import('@v/roomManager/index.vue'),
-        meta: { title: '房间管理' }
+        meta: { title: '客房管理' },
+        component: () => import('@v/roomManager/RoomManager.vue'),
       },
       // account
+
+
+
+
     ],
 
   },
   {
     path: '*',
-    component: () =>import ('@v/404/error.vue')
+    component: () => import('@v/404/error.vue')
   }
 ]
 
@@ -62,12 +76,16 @@ const router = new VueRouter({
 })
 
 router.beforeEach((to, from, next) => {
-  NProgress.start()
+  if (to.meta && to.meta.title) {
+    document.title = to.meta.title
+  };
+
+  NProgress.start();
   next()
 })
 
-router.afterEach(() => {
-  NProgress.done()
+router.afterEach((to, from) => {
+  NProgress.done();
 })
 
 export default router
