@@ -3,7 +3,7 @@
     <el-row :gutter="20">
       <el-col :span="16">
         <div class="grid-content bg-purple">
-          <el-button type="primary" @click="purple">新增</el-button>
+          <el-button type="primary" @click="purple">增加角色</el-button>
         </div>
       </el-col>
       <el-col :span="8">
@@ -45,7 +45,7 @@
 
 <script>
 // 导入角色用户api层
-import * as role_api from '../../api/role_api.js'
+import * as role_api from "../../api/role_api.js"; //将role_api中的方法全部导出给一个role_api对象
 
 export default {
   data() {
@@ -128,6 +128,11 @@ export default {
     };
   },
   methods: {
+    getRoleList() {
+      // 获取列表数据
+      let res = role_api.roleList();
+    },
+
     handleClick(row) {
       console.log(row);
     },
