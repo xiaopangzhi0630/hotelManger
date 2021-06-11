@@ -14,6 +14,7 @@
           :background-color="themeColor"
           text-color="#fff"
           active-text-color="#ffd04b"
+         
         >
           <el-submenu index="/layout/role">
             <template slot="title">
@@ -65,7 +66,8 @@
         <div class="bg" @click="isShowMenu">
           <i :class="!isCollapse ? 'el-icon-s-fold' : 'el-icon-s-unfold'"></i>
         </div>
-
+        
+          
         <el-menu
           class="el-menu-demo"
           mode="horizontal"
@@ -73,16 +75,11 @@
           text-color="#fff"
           router
           active-text-color="#ffd04b"
+          style="min-width: 640px"
         >
-          <el-menu-item index="/layout">
-            <i class="el-icon-s-home"></i>Home</el-menu-item
-          >
-          <el-menu-item index="2">
-            <i class="el-icon-s-comment"></i>Message</el-menu-item
-          >
-          <el-menu-item index="3">
-            <i class="el-icon-message"></i>Email</el-menu-item
-          >
+          <el-menu-item index="/layout"><i class="el-icon-s-home"></i>Home</el-menu-item>
+          <el-menu-item index="2"><i class="el-icon-s-comment"></i>Message</el-menu-item>
+          <el-menu-item index="3"><i class="el-icon-message"></i>Email</el-menu-item>
           <el-submenu index="4">
             <template slot="title">
               <i class="el-icon-help"></i>
