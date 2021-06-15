@@ -8,12 +8,14 @@ import '@/assets/style/base.scss'
 
 Vue.config.productionTip = false
 // 浏览器显示title
-router.beforeEach((to, from, next) => {
-  if (to.meta.title) {
-    document.title = to.meta.title
-  }
-  next()
-})
+// router.beforeEach((to, from, next) => {
+//   if (to.meta.title) {
+//     document.title = to.meta.title
+//   }
+//   next()
+// })
+
+import '../src/mock/index'
 
 new Vue({
   router,

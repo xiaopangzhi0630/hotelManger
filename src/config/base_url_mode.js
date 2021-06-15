@@ -3,7 +3,7 @@
 export default {
   mock: {
     name: '虚拟环境',
-    url: 'http://mock.com'
+    url: 'http://mockjs.com:88'
   },
   dev: {
     name: '开发环境',

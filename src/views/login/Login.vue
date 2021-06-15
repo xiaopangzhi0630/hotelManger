@@ -9,8 +9,8 @@
         status-icon
         :rules="rules"
         ref="ruleForm"
-        size="mini"
-        label-width="100px"
+        size="medium"
+        label-width="80px"
         class="demo-ruleForm"
       >
         <el-form-item label="账号" prop="userName">
@@ -18,7 +18,7 @@
             v-model="ruleForm.userName"
             placeholder="admin"
             autocomplete="off"
-            style="width: 80%"
+            style="width:85%"
           ></el-input>
         </el-form-item>
         <el-form-item label="密码" prop="password">
@@ -27,7 +27,7 @@
             v-model="ruleForm.password"
             placeholder="123321"
             autocomplete="off"
-            style="width: 80%"
+            style="width: 85%"
           >
           </el-input>
         </el-form-item>
@@ -162,8 +162,8 @@ export default {
 
   .main {
     position: absolute;
-    width: 460px;
-    height: 250px;
+    width: 500px;
+    height: 300px;
     border: 1px solid #ccc;
     border-radius: 5px;
   }

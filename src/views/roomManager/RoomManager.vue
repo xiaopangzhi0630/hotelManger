@@ -1,5 +1,6 @@
 <template>
   <div class="app-layout">
+    客房管理
 
     <el-row :gutter="20">
       <el-col :span="16">
