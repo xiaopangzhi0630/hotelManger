@@ -30,6 +30,7 @@ const routes = [
     meta: { title: 'Bing酒店管理系统' },
     component: () => import('@v/layout/Layout.vue'),
     children: [
+      // 左侧菜单
       {
         path: 'role',
         meta: { title: '角色管理' },
@@ -57,6 +58,28 @@ const routes = [
       },
       // account
 
+
+      // 右侧路由
+      {
+        path: 'message',
+        meta: { title: '消息中心' },
+        component: () => import('@v/message/Message.vue'),
+      },
+      {
+        path: 'email',
+        meta: { title: '邮件中心' },
+        component: () => import('@v/email/Email.vue'),
+      },
+      {
+        path: 'mine',
+        meta: { title: '个人中心' },
+        component: () => import('@v/mine/Mine.vue'),
+      },
+      {
+        path: 'resetPwd',
+        meta: { title: '修改密码' },
+        component: () => import('@v/resetPwd/ResetPwd.vue'),
+      },
 
 
 
