@@ -33,9 +33,9 @@
               <i class="el-icon-s-custom"></i>
               <span slot="title">客户管理</span>
             </template>
-            <el-menu-item index="3-1">选项1</el-menu-item>
-            <el-menu-item index="3-2">选项2</el-menu-item>
-            <el-menu-item index="3-3">选项3</el-menu-item>
+            <el-menu-item index="/layout/guestList">客户管理</el-menu-item>
+            <!-- <el-menu-item index="3-2">选项2</el-menu-item>
+            <el-menu-item index="3-3">选项3</el-menu-item> -->
           </el-submenu>
           <el-submenu index="4">
             <template slot="title">

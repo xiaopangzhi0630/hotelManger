@@ -56,6 +56,11 @@ const routes = [
         meta: { title: '客房管理' },
         component: () => import('@v/roomManager/RoomManager.vue'),
       },
+      {
+        path: 'guestList',
+        meta: { title: '客户管理' },
+        component: () => import('@v/guest/guestList.vue'),
+      },
       // account
 
 

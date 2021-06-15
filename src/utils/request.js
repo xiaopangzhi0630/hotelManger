@@ -6,7 +6,7 @@ import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 
 // 导入base_url
-import {BASE_URL} from '../config/index'
+import { BASE_URL } from '../config/index'
 
 //初始化一个axios对象
 const instance = axios.create({
@@ -44,15 +44,15 @@ instance.interceptors.response.use(function (response) {
 
 
 // 创建以一个get请求
-let get = async function(url, params) {
+let get = async function (url, params) {
   // return instance.get(url, {params})
-  let {data} = await instance.get(url, {params});
+  let { data } = await instance.get(url, { params });
   return data;
 };
 
 // 创建一个post请求
-let post = async function(url, params) {
-  let {data} = await instance.post(url, {params});
+let post = async function (url, params) {
+  let { data } = await instance.post(url, { params });
   return data;
 };
 

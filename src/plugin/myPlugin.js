@@ -1,7 +1,7 @@
 import {
   get,
   post
-} from '../plugin/myPlugin'
+} from '../utils/request'
 
 // 自定义插件
 
@@ -13,6 +13,7 @@ export default {
       methods: {
         // 请求方法
         $get(url, params) {
+          // console.log(234, url);
           return get(url, params)
         },
         $post(url, params) {

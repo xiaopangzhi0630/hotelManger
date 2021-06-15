@@ -15,6 +15,8 @@ Vue.config.productionTip = false
 //   next()
 // })
 
+import '../src/mock/index'
+
 new Vue({
   router,
   store,
