@@ -9,7 +9,7 @@
           </el-option>
         </el-select>
       </el-col>
-      <el-col :span="4">
+      <el-col :span="5">
         <span>状态：</span>
         <el-select v-model="roomState" placeholder="请选择类型" size='small'>
           <el-option v-for="item in roomStateList" :key="item.value" :label="item.label" :value="item.value">

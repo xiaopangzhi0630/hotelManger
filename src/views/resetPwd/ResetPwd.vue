@@ -1,13 +1,13 @@
 <template>
-  <div>
+  <div class="app-layout">
     重置密码
   </div>
 </template>
 
 <script>
-export default {
+  export default {
 
-}
+  }
 </script>
 
 <style>

@@ -1,13 +1,13 @@
 <template>
-  <div>
+  <div class="app-layout">
     emial
   </div>
 </template>
 
 <script>
-export default {
+  export default {
 
-}
+  }
 </script>
 
 <style>
