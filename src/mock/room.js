@@ -1,9 +1,8 @@
 import Mock from 'mockjs'
 
-
-// Mock.setup({
-//   timeout: 3000
-// })
+Mock.setup({
+  timeout: 500
+})
 
 Mock.mock('http://mockjs.com:88/api/roomlist', function () {
   return Mock.mock(
@@ -37,7 +36,5 @@ Mock.mock('http://mockjs.com:88/api/roomlist', function () {
       ]
     }
   )
-
-
 })
 
