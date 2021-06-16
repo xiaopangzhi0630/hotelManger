@@ -41,8 +41,6 @@ instance.interceptors.response.use(function (response) {
 });
 
 
-
-
 // 创建以一个get请求
 let get = async function (url, params) {
   // return instance.get(url, {params})
