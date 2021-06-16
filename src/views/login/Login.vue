@@ -10,7 +10,7 @@
           <el-input v-model="ruleForm.userName" placeholder="admin" autocomplete="off" style="width:85%"></el-input>
         </el-form-item>
         <el-form-item label="密码" prop="password">
-          <el-input type="password" v-model="ruleForm.password" placeholder="123321" autocomplete="off"
+          <el-input type="password" v-model="ruleForm.password" placeholder="123456" autocomplete="off"
             style="width: 85%">
           </el-input>
         </el-form-item>
@@ -84,13 +84,14 @@
 
     methods: {
       submitForm(formName) {
+        console.log(strToMd5(this.ruleForm.password));
         // 验证是否成功
         this.$refs[formName].validate((valid) => {
           if (valid) {
             // alert('submit!');
             // 请求接口  实现登录  调用全局混入的get 请求方法
             // this.$get('/admin/login', this.ruleForm); //开发中使用登录接口
-            if (strToMd5(this.ruleForm.password) == "e847999b3a0386c2c7ae3d99b073e8cd") {
+            if (strToMd5(this.ruleForm.password) == "74ce4a21f159e81638334cbe243cd2cf") {
               // 保存token
               sessionStorage.setItem('token', '123456789');
               // 保存登录名
@@ -158,6 +159,7 @@
       height: 300px;
       border: 1px solid #ccc;
       border-radius: 5px;
+      background: rgb(255 255 255 / 8%);
     }
 
     .bg {

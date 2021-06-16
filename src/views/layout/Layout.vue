@@ -74,7 +74,7 @@
           <el-submenu index="2">
             <template slot="title">
               <i class="el-icon-user"></i>
-              <span slot="title">管理员</span>
+              <span slot="title">{{userName}}</span>
             </template>
             <el-menu-item index="/layout/mine">个人中心</el-menu-item>
             <el-menu-item index="/layout/resetPwd">修改密码</el-menu-item>
@@ -99,6 +99,7 @@
     data() {
       return {
         isCollapse: false,
+        userName: '',
         currentActiveMenu: sessionStorage.getItem("defaultMenu") || "",
         themeColor: localStorage.getItem("theme") || "#003a6c",
       };
@@ -110,6 +111,9 @@
 
     mounted() {
       // console.log(this.theme);
+      console.log(localStorage.getItem('userName'));
+      this.userName = localStorage.getItem('userName')
+
     },
 
     methods: {
