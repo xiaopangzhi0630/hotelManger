@@ -22,7 +22,7 @@
 
     </el-row>
 
-    <el-table :data="tableData" border style="width: 100%; ">
+    <el-table :data="tableData" border style="width: 100%; " v-loading="isLoading">
       <el-table-column prop="roomId" label="客房号" width="100" align="center">
       </el-table-column>
       <el-table-column prop="roomTypeName" label="客房类型" align="center">
@@ -45,6 +45,7 @@
   export default {
     data() {
       return {
+        isLoading: false,
         tableData: [],
         tolal: 0,
         currentPage: 1,
@@ -86,11 +87,13 @@
     methods: {
       async getRoomList() {
         console.log(this);
+        this.isLoading = true;
         let res = await this.$get('/api/roomlist');
         console.log(res)
         if (res.status == 200) {
           this.tableData = res.data;
           this.tolal = res.total;
+          this.isLoading = false;
         }
       },
 
