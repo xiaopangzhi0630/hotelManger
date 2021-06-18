@@ -20,6 +20,11 @@ export default {
         // value: '#baccd9'
         value: '#177cb0'
       },
+      {
+        name: '胆矾蓝主题',
+        // value: '#baccd9'
+        value: '#0f95b0'
+      },
 
     ]
   },
