@@ -34,12 +34,18 @@ const routes = [
       {
         path: 'role',
         meta: { title: '角色管理' },
+        name: 'role',
         component: () => import('@v/role/Role.vue'),
       },
       {
         path: 'account',
         meta: { title: '账号管理' },
+        name: 'account',
         component: () => import('@v/role/Account.vue'),
+        // 设置缓存
+        // meta:{
+        //   keepAlive: true
+        // }
       },
       {
         path: 'roomTest',
@@ -61,7 +67,6 @@ const routes = [
         meta: { title: '客户管理' },
         component: () => import('@v/guest/guestList.vue'),
       },
-      // account
 
 
       // 右侧路由
@@ -85,8 +90,6 @@ const routes = [
         meta: { title: '修改密码' },
         component: () => import('@v/resetPwd/ResetPwd.vue'),
       },
-
-
 
     ],
 

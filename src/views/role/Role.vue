@@ -43,6 +43,7 @@
   import * as role_api from "../../api/role_api.js"; //将role_api中的方法全部导出给一个role_api对象
 
   export default {
+    name: 'role',
     data() {
       return {
         isLoading: false,

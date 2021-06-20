@@ -83,7 +83,15 @@
         </el-menu>
       </div>
       <div class="nav">
-        <router-view></router-view>
+        <!-- <keep-alive>
+          <router-view v-if="$route.meta.keepAlive" />
+        </keep-alive>
+
+        <router-view v-if="!$route.meta.keepAlive" /> -->
+
+        <keep-alive include="account">
+          <router-view></router-view>
+        </keep-alive>
       </div>
     </div>
   </div>
