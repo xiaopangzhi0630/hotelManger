@@ -4,6 +4,7 @@
       <el-col :span="16">
         <div class="grid-content bg-purple">
           <el-button type="primary" @click="addUser">增加角色</el-button>
+          <el-button type="primary" @click="goBackLogin">返回登录页</el-button>
         </div>
       </el-col>
       <el-col :span="8">
@@ -56,6 +57,10 @@
       this.getRoleList()
     },
     methods: {
+
+      goBackLogin() {
+        this.$router.push('/login')
+      },
       async getRoleList() {
         // 获取列表数据
         this.isLoading = true;
