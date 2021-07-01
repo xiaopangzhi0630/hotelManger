@@ -65,7 +65,7 @@ const routes = [
       {
         path: 'guestList',
         meta: { title: '客户管理' },
-        component: () => import('@v/guest/guestList.vue'),
+        component: () => import('@v/guest/GuestList.vue'),
       },
 
 
