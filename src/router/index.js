@@ -90,6 +90,16 @@ const routes = [
         meta: { title: '修改密码' },
         component: () => import('@v/resetPwd/ResetPwd.vue'),
       },
+      {
+        path: 'userManager',
+        meta: { title: '人员管理' },
+        component: () => import('@v/authorityManager/userManager/UserManager.vue'),
+      },
+      {
+        path: 'sortable',
+        meta: { title: '测试拖拽' },
+        component: () => import('@v/authorityManager/sortable/Sortable.vue'),
+      },
 
     ],
 

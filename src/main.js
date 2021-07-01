@@ -4,6 +4,7 @@ import router from './router'
 import store from './store'
 import '@/plugin/index.js'
 import '@/assets/style/base.scss'
+// import Sortable from 'sortablejs'
 
 
 Vue.config.productionTip = false

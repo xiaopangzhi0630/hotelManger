@@ -42,8 +42,8 @@
               <i class="el-icon-setting"></i>
               <span slot="title">权限管理</span>
             </template>
-            <el-menu-item index="4-1">选项1</el-menu-item>
-            <el-menu-item index="4-2">选项2</el-menu-item>
+            <el-menu-item index="/layout/userManager">人员管理</el-menu-item>
+            <el-menu-item index="/layout/sortable">sortable</el-menu-item>
             <el-menu-item index="4-3">选项3</el-menu-item>
           </el-submenu>
         </el-menu>
