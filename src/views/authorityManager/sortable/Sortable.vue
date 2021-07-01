@@ -2,6 +2,8 @@
   <!-- <div style="width:800px"> -->
 
   <div class="app-layout">
+    <screenfull></screenfull>
+
     <el-table :data="tableData" border row-key="id" align="left">
       <el-table-column v-for="(item, index) in col" :key="`col_${index}`" :prop="dropCol[index].prop"
         :label="item.label">
@@ -18,6 +20,7 @@
 </template>
 <script>
   import Sortable from 'sortablejs';
+  import screenfull from '../../../component/ScreenFull.vue'
 
   export default {
     data() {
@@ -78,6 +81,9 @@
     mounted() {
       this.rowDrop()
       this.columnDrop()
+    },
+    components: {
+      screenfull
     },
     methods: {
       //行拖拽
