@@ -43,9 +43,9 @@ const routes = [
         name: 'account',
         component: () => import('@v/role/Account.vue'),
         // 设置缓存
-        // meta:{
-        //   keepAlive: true
-        // }
+        meta:{
+          keepAlive: true
+        }
       },
       {
         path: 'roomTest',
@@ -117,6 +117,7 @@ const router = new VueRouter({
 })
 
 router.beforeEach((to, from, next) => {
+  // console.log('to', to);
   if (to.meta && to.meta.title) {
     document.title = to.meta.title
   };

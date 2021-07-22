@@ -42,7 +42,6 @@
         // 获取列表数据
         this.isLoading = true;
         let res = await role_api.roleList();
-        console.log('res2222', res.data);
         if(res.status == 200) {
           this.roleList = res.data;
            this.isLoading = false;

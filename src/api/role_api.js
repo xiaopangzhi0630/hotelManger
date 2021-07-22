@@ -9,7 +9,7 @@ import {
 export let roleList = async function()  {
   let res = await get('/Role/List');
   // 处理数据。。。。 然后返回在页面使用
-  console.log(res);
+  // console.log(res);
   return res
 }
 

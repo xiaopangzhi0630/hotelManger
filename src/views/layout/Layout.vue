@@ -12,8 +12,8 @@
               <i class="el-icon-user-solid"></i>
               <span>账号管理</span>
             </template>
-            <el-menu-item index="/layout/role">角色管理</el-menu-item>
-            <el-menu-item index="/layout/account">账号管理</el-menu-item>
+            <el-menu-item index="/layout/role" @click="handleName('角色管理')">角色管理</el-menu-item>
+            <el-menu-item index="/layout/account" @click="handleName('账号管理')">账号管理</el-menu-item>
             <!-- <el-submenu index="1-4">
               <template slot="title">选项4</template>
               <el-menu-item index="1-4-1">选项1</el-menu-item>
@@ -49,6 +49,7 @@
         </el-menu>
       </div>
     </div>
+
     <!-- 右侧导航 -->
     <div class="right">
       <div class="top" :style="{ backgroundColor: themeColor }">
@@ -83,15 +84,23 @@
         </el-menu>
       </div>
       <div class="nav">
-        <!-- <keep-alive>
+        <!-- 历史菜单位置 -->
+        <div>
+          <el-tag :key="tag" v-for="tag in dynamicTags" closable :disable-transitions="false" @close="handleClose(tag)"
+            @click="handleHistoryMenu">
+            {{tag}}
+          </el-tag>
+        </div>
+
+        <keep-alive>
           <router-view v-if="$route.meta.keepAlive" />
         </keep-alive>
 
-        <router-view v-if="!$route.meta.keepAlive" /> -->
+        <router-view v-if="!$route.meta.keepAlive" />
 
-        <keep-alive include="account">
+        <!-- <keep-alive include="account">
           <router-view></router-view>
-        </keep-alive>
+        </keep-alive> -->
       </div>
     </div>
   </div>
@@ -110,6 +119,12 @@
         userName: '',
         currentActiveMenu: sessionStorage.getItem("defaultMenu") || "",
         themeColor: localStorage.getItem("theme") || "#003a6c",
+
+
+        dynamicTags: ['标签一', '标签二', '标签三'],
+        // inputVisible: false,
+        // inputValue: ''
+
       };
     },
 
@@ -119,12 +134,25 @@
 
     mounted() {
       // console.log(this.theme);
-      console.log(localStorage.getItem('userName'));
+      // console.log(localStorage.getItem('userName'));
       this.userName = localStorage.getItem('userName')
 
     },
 
     methods: {
+      handleHistoryMenu() {
+        console.log(12312)
+     
+      },
+      handleName(val) {
+        console.log(val);
+      },
+
+      handleClose(tag) {
+        this.dynamicTags.splice(this.dynamicTags.indexOf(tag), 1);
+      },
+
+
       // 退出登录
       handleSignOut() {
         localStorage.clear();
@@ -138,6 +166,8 @@
       // 菜单缓存
       changeActiveMenu(indexPath) {
         console.log(indexPath);
+
+           console.log('route', this.$route);
         sessionStorage.setItem("defaultMenu", indexPath);
       },
       // 改变颜色
@@ -159,6 +189,21 @@
 </script>
 
 <style lang="scss" scoped>
+  // .el-tag+.el-tag {
+  //   margin-left: 10px;
+  // }
+
+  .button-new-tag {
+    margin-left: 10px;
+    height: 32px;
+    line-height: 30px;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  //  =============
+
+
   .layout {
     width: 100vw;
     height: 100vh;
