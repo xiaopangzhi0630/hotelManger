@@ -44,7 +44,7 @@
             </template>
             <el-menu-item index="/layout/userManager">人员管理</el-menu-item>
             <el-menu-item index="/layout/sortable">sortable</el-menu-item>
-            <el-menu-item index="4-3">选项3</el-menu-item>
+            <el-menu-item index="/layout/tableTest">测试</el-menu-item>
           </el-submenu>
         </el-menu>
       </div>
@@ -85,12 +85,12 @@
       </div>
       <div class="nav">
         <!-- 历史菜单位置 -->
-        <div>
+        <!-- <div>
           <el-tag :key="tag" v-for="tag in dynamicTags" closable :disable-transitions="false" @close="handleClose(tag)"
             @click="handleHistoryMenu">
             {{tag}}
           </el-tag>
-        </div>
+        </div> -->
 
         <keep-alive>
           <router-view v-if="$route.meta.keepAlive" />
@@ -291,7 +291,7 @@
       .nav {
         padding: 15px;
         height: calc(100vh - 90px);
-        background: rgb(245, 242, 235);
+        background: rgb(1245, 242, 235);
       }
     }
   }
