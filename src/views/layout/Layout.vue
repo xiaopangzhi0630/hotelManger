@@ -85,12 +85,13 @@
       </div>
       <div class="nav">
         <!-- 历史菜单位置 -->
-        <div>
+        <!-- <div>
           <el-tag :key="tag" v-for="tag in dynamicTags" closable :disable-transitions="false" @close="handleClose(tag)"
             @click="handleHistoryMenu">
             {{tag}}
           </el-tag>
-        </div>
+        </div> -->
+        <history-menu></history-menu>
 
         <keep-alive>
           <router-view v-if="$route.meta.keepAlive" />
@@ -112,16 +113,19 @@
     mapState
   } from "vuex";
 
+  import HistoryMenu from '../historyMenu/HistoryMenu.vue';
+
   export default {
     data() {
       return {
+
         isCollapse: false,
         userName: '',
         currentActiveMenu: sessionStorage.getItem("defaultMenu") || "",
         themeColor: localStorage.getItem("theme") || "#003a6c",
 
 
-        dynamicTags: ['标签一', '标签二', '标签三'],
+        // dynamicTags: ['标签一', '标签二', '标签三'],
         // inputVisible: false,
         // inputValue: ''
 
@@ -130,6 +134,10 @@
 
     computed: {
       ...mapState("theme", ["theme"]),
+    },
+
+    components: {
+      HistoryMenu
     },
 
     mounted() {
@@ -142,7 +150,7 @@
     methods: {
       handleHistoryMenu() {
         console.log(12312)
-     
+
       },
       handleName(val) {
         console.log(val);
@@ -167,7 +175,7 @@
       changeActiveMenu(indexPath) {
         console.log(indexPath);
 
-           console.log('route', this.$route);
+        console.log('route', this.$route);
         sessionStorage.setItem("defaultMenu", indexPath);
       },
       // 改变颜色
