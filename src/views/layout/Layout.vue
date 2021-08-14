@@ -44,7 +44,7 @@
             </template>
             <el-menu-item index="/layout/userManager">人员管理</el-menu-item>
             <el-menu-item index="/layout/sortable">sortable</el-menu-item>
-            <el-menu-item index="4-3">选项3</el-menu-item>
+            <el-menu-item index="/layout/tableTest">测试</el-menu-item>
           </el-submenu>
         </el-menu>
       </div>
@@ -91,7 +91,10 @@
             {{tag}}
           </el-tag>
         </div> -->
+<<<<<<< HEAD
         <history-menu></history-menu>
+=======
+>>>>>>> 36fdceff2929c0c1d409639afc7148d479d46dda
 
         <keep-alive>
           <router-view v-if="$route.meta.keepAlive" />
@@ -299,7 +302,7 @@
       .nav {
         padding: 15px;
         height: calc(100vh - 90px);
-        background: rgb(245, 242, 235);
+        background: rgb(1245, 242, 235);
       }
     }
   }

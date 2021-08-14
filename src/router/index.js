@@ -100,6 +100,11 @@ const routes = [
         meta: { title: '测试拖拽' },
         component: () => import('@v/authorityManager/sortable/Sortable.vue'),
       },
+      {
+        path: 'tableTest',
+        meta: { title: '表格' },
+        component: () => import('@v/authorityManager/sortable/TableTest.vue'),
+      },
 
     ],
 
