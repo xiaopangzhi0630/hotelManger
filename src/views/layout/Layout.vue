@@ -91,7 +91,7 @@
             {{tag}}
           </el-tag>
         </div> -->
-        <history-menu></history-menu>
+        <!-- <history-menu></history-menu> -->
 
         <keep-alive>
           <router-view v-if="$route.meta.keepAlive" />
