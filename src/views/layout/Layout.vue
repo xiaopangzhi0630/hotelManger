@@ -91,10 +91,7 @@
             {{tag}}
           </el-tag>
         </div> -->
-<<<<<<< HEAD
         <history-menu></history-menu>
-=======
->>>>>>> 36fdceff2929c0c1d409639afc7148d479d46dda
 
         <keep-alive>
           <router-view v-if="$route.meta.keepAlive" />

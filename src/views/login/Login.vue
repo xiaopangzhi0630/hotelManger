@@ -3,11 +3,7 @@
     <canvas id="particle-canvas" width="910" height="875"></canvas>
 
     <div class="main">
-<<<<<<< HEAD
-      <span class="manager-style">Dr酒店后台管理系统</span>
-=======
       <span class="manager-style">Rabbit后台管理系统</span>
->>>>>>> 36fdceff2929c0c1d409639afc7148d479d46dda
       <el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm" size="medium" label-width="80px"
         class="demo-ruleForm">
         <el-form-item label="账号" prop="userName">
