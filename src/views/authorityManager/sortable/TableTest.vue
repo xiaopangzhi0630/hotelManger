@@ -189,6 +189,7 @@
       handleDelete(index, row) {
         console.log(index, row);
       }
+      
       // load(tree, treeNode, resolve) {
       //   setTimeout(() => {
       //     resolve([{
