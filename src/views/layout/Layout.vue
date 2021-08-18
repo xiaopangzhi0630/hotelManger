@@ -46,6 +46,14 @@
             <el-menu-item index="/layout/sortable">sortable</el-menu-item>
             <el-menu-item index="/layout/tableTest">测试</el-menu-item>
           </el-submenu>
+
+          <el-submenu index="5">
+            <template slot="title">
+              <i class="el-icon-setting"></i>
+              <span slot="title">Element测试</span>
+            </template>
+            <el-menu-item index="/layout/tableMerge">table合并测试</el-menu-item>
+          </el-submenu>
         </el-menu>
       </div>
     </div>
