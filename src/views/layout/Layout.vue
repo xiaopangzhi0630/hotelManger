@@ -54,6 +54,15 @@
             </template>
             <el-menu-item index="/layout/tableMerge">table合并测试</el-menu-item>
           </el-submenu>
+
+          <el-submenu index="6">
+            <template slot="title">
+              <i class="el-icon-setting"></i>
+              <span slot="title">Login效果图</span>
+            </template>
+            <el-menu-item index="/layout/userManagerFront">风险管理</el-menu-item>
+            <el-menu-item index="/layout/business">同一业务</el-menu-item>
+          </el-submenu>
         </el-menu>
       </div>
     </div>

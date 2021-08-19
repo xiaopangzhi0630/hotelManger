@@ -105,6 +105,22 @@ const routes = [
         meta: { title: '表格' },
         component: () => import('@v/authorityManager/sortable/TableTest.vue'),
       },
+      {
+        path: 'tableMerge',
+        meta: { title: '表格' },
+        component: () => import('@v/tableMerge/index.vue'),
+      },
+      // Login效果图
+      {
+        path: 'userManagerFront',
+        meta: { title: 'zj权限管理' },
+        component: () => import('@v/loginEffect/userManagerFront.vue'),
+      },
+      {
+        path: 'business',
+        meta: { title: 'zj同一业务' },
+        component: () => import('@v/loginEffect/business.vue'),
+      },
 
     ],
 
