@@ -10,6 +10,13 @@ import Blob from './utils/Blob'
 import Export2Excel from './utils/Export2Excel.js'
 
 
+import { VTooltip, VPopover, VClosePopover } from 'v-tooltip'
+Vue.use(VTooltip)
+
+
+// 全局定义组件
+Vue.component('v-popover', VTooltip.VPopover)
+
 Vue.config.productionTip = false
 // 浏览器显示title
 // router.beforeEach((to, from, next) => {

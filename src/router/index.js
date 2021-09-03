@@ -108,7 +108,12 @@ const routes = [
       {
         path: 'tableMerge',
         meta: { title: '表格' },
-        component: () => import('@v/tableMerge/index.vue'),
+        component: () => import('@v/eleTest/tableMerge/index.vue'),
+      },
+      {
+        path: 'tooltips',
+        meta: { title: 'tooltip' },
+        component: () => import('@v/eleTest/tooltips/index.vue'),
       },
       // Login效果图
       {

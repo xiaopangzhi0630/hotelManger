@@ -53,6 +53,7 @@
               <span slot="title">Element测试</span>
             </template>
             <el-menu-item index="/layout/tableMerge">table合并测试</el-menu-item>
+            <el-menu-item index="/layout/toolTips">toolTip合并测试</el-menu-item>
           </el-submenu>
 
           <el-submenu index="6">
