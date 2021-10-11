@@ -7,11 +7,12 @@
       <el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm" size="medium" label-width="80px"
         class="demo-ruleForm">
         <el-form-item label="账号" prop="userName">
-          <el-input v-model="ruleForm.userName"  prefix-icon="el-icon-user" placeholder="admin" autocomplete="off" style="width:85%"></el-input>
+          <el-input v-model="ruleForm.userName" prefix-icon="el-icon-user" placeholder="admin" autocomplete="off"
+            style="width:85%"></el-input>
         </el-form-item>
         <el-form-item label="密码" prop="password">
-          <el-input type="password"  prefix-icon="el-icon-lock" v-model="ruleForm.password" placeholder="123456" autocomplete="off"
-            style="width: 85%">
+          <el-input type="password" prefix-icon="el-icon-lock" v-model="ruleForm.password" placeholder="123456"
+            autocomplete="off" style="width: 85%">
           </el-input>
         </el-form-item>
         <el-form-item label="" prop="checked">
@@ -57,8 +58,8 @@
 
       return {
         ruleForm: {
-          userName: "",
-          password: "",
+          userName: "admin",
+          password: "123456",
           checked: false,
         },
         rules: {
