@@ -101,6 +101,7 @@
           </el-submenu>
         </el-menu>
       </div>
+       
       <div class="nav">
         <!-- 历史菜单位置 -->
         <!-- <div>
@@ -111,16 +112,19 @@
         </div> -->
         <!-- <history-menu></history-menu> -->
 
-        <keep-alive>
-          <router-view v-if="$route.meta.keepAlive" />
-        </keep-alive>
+       <!-- <transition  name="fade-transform" mode="out-in"> -->
 
-        <router-view v-if="!$route.meta.keepAlive" />
+          <keep-alive>
+            <router-view v-if="$route.meta.keepAlive" />
+          </keep-alive>
 
+          <router-view v-if="!$route.meta.keepAlive" />
+       <!-- </transition> -->
         <!-- <keep-alive include="account">
           <router-view></router-view>
         </keep-alive> -->
       </div>
+       
     </div>
   </div>
 </template>
@@ -142,7 +146,7 @@
         currentActiveMenu: sessionStorage.getItem("defaultMenu") || "",
         themeColor: localStorage.getItem("theme") || "#003a6c",
 
-      
+
         // dynamicTags: ['标签一', '标签二', '标签三'],
         // inputVisible: false,
         // inputValue: ''
