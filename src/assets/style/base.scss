@@ -1,21 +1,24 @@
-
-@import './transition.scss';
-
 html {
   box-sizing: border-box;
 }
 
 #app .app-layout {
-  height: calc(100vh - 110px);
+  // height: calc(100vh - 110px);
+  // height: calc(100vh - 60px);
   background: white;
-  overflow-x: hidden;
-  overflow-y: auto;
+  // overflow-x: hidden;
+  // overflow-y: auto;
   // border-radius: 3px;
-  padding: 10px 20px;
+  padding: 20px;
   // box-sizing: border-box;
 }
+
 #app .mb20 {
   margin-bottom: 20px;
+}
+
+#app .mt20 {
+  margin-top: 20px;
 }
 
 #app .fr {

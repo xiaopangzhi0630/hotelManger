@@ -22,7 +22,7 @@
 
     </el-row>
 
-    <el-table :data="tableData" border style="width: 100%; " v-loading="isLoading">
+    <el-table :data="tableData" border style="width: 100%; " v-loading="isLoading" size="small">
       <el-table-column prop="roomId" label="客房号" width="100" align="center">
       </el-table-column>
       <el-table-column prop="roomTypeName" label="客房类型" align="center">

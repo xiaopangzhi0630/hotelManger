@@ -1,12 +1,20 @@
 <template>
   <div class="app-layout">
- 
-    <el-table :data="roleList" border style="margin-top: 20px"  v-loading="isLoading">
-      <el-table-column prop="date" label="日期" align="center"  width="150"> </el-table-column>
-      <el-table-column prop="name" label="姓名"  align="center"> </el-table-column>
-      <el-table-column prop="province" label="省份"  align="center">
+    <el-row>
+      <el-col :span="8">
+        <div class="grid-content bg-purple">
+          <el-input placeholder="请输入内容" v-model="input3" class="input-with-select" size="small">
+            <el-button type="primary" slot="append" icon="el-icon-search"></el-button>
+          </el-input>
+        </div>
+      </el-col>
+    </el-row>
+    <el-table :data="roleList" border style="margin-top: 20px" v-loading="isLoading" size="small">
+      <el-table-column prop="date" label="日期" align="center" width="150"> </el-table-column>
+      <el-table-column prop="name" label="姓名" align="center"> </el-table-column>
+      <el-table-column prop="province" label="省份" align="center">
       </el-table-column>
-      <el-table-column prop="city" label="市区"  align="center"> </el-table-column>
+      <el-table-column prop="city" label="市区" align="center"> </el-table-column>
       <el-table-column prop="address" label="地址" align="center">
       </el-table-column>
       <el-table-column prop="zip" label="邮编" align="center"> </el-table-column>
@@ -17,6 +25,7 @@
         </template>
       </el-table-column>
     </el-table>
+   
   </div>
 </template>
 
@@ -42,9 +51,9 @@
         // 获取列表数据
         this.isLoading = true;
         let res = await role_api.roleList();
-        if(res.status == 200) {
+        if (res.status == 200) {
           this.roleList = res.data;
-           this.isLoading = false;
+          this.isLoading = false;
         };
       },
 

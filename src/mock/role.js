@@ -10,7 +10,7 @@ Mock.mock('http://mockjs.com:88/Role/List', function () {
       status: 200,
       message: 'success',
       total: 150,
-      'data|10': [
+      'data|20': [
         {
           // 'roomId|+1': 100,
           id: '@increment(1)',
@@ -18,6 +18,7 @@ Mock.mock('http://mockjs.com:88/Role/List', function () {
           date: '@date("yyyy-MM-dd")',
           province: '@province()',
           city: '@city',
+          phone: '@phone(11)',
           email: '@email',
            zip: '@zip',
            address: '@county(true)',

@@ -101,8 +101,11 @@
           </el-submenu>
         </el-menu>
       </div>
-       
+
       <div class="nav">
+        <!-- 222 -->
+
+        <!-- <div class="nav"> -->
         <!-- 历史菜单位置 -->
         <!-- <div>
           <el-tag :key="tag" v-for="tag in dynamicTags" closable :disable-transitions="false" @close="handleClose(tag)"
@@ -111,22 +114,102 @@
           </el-tag>
         </div> -->
         <!-- <history-menu></history-menu> -->
-
-       <!-- <transition  name="fade-transform" mode="out-in"> -->
-
+        <!-- <transition name="fade-transform" mode="out-in"> -->
+        <!-- <keep-alive>
+          <router-view v-if="$route.meta.keepAlive" :key="1" />
+        </keep-alive>
+        <router-view v-if="!$route.meta.keepAlive" :key="1" /> -->
+        <!-- <router-view /> -->
+        <!-- <keep-alive include="account">
+        </keep-alive> -->
+        <!-- </div> -->
+        <!-- </transition> -->
+        <!-- <transition name="fade-transform" mode="out-in">
           <keep-alive>
             <router-view v-if="$route.meta.keepAlive" />
           </keep-alive>
+        </transition>
+        <transition name="fade-transform" mode="out-in">
+          <router-view />
+        </transition> -->
 
-          <router-view v-if="!$route.meta.keepAlive" />
-       <!-- </transition> -->
-        <!-- <keep-alive include="account">
-          <router-view></router-view>
-        </keep-alive> -->
+
+
+        <!-- <transition-group name="fade-transform" mode="out-in" :key="1">
+          <keep-alive>
+            <router-view v-if="this.$route.meta.keepAlive"></router-view>
+          </keep-alive>
+        </transition-group>
+        <transition name="fade-transform" mode="out-in" >
+          <router-view v-if="!this.$route.meta.keepAlive"></router-view>
+        </transition> -->
+
+        <!-- 没有动画效果 -->
+        <!-- <keep-alive>
+          <router-view v-if="$route.meta.keepAlive" />
+        </keep-alive>
+        <router-view v-if="!$route.meta.keepAlive" /> -->
+
+        <!-- 页面渐入渐出, 但是没有缓存 -->
+        <!-- <transition name="fade-transform" mode="out-in">
+          <router-view />
+        </transition> -->
+
+        <!-- 页面渐入渐出, 有缓存 -->
+        <!-- <transition-group name="fade-transform" mode="out-in">
+          <keep-alive key="keep-alive">
+            <router-view v-if="$route.meta.keepAlive" />
+          </keep-alive>
+          <router-view v-if="!$route.meta.keepAlive" key="not-keep-alive" />
+        </transition-group> -->
+        <!-- <transition-group name="fade-transform">
+          <div key="keep-alive" v-if="$route.meta.keepAlive">
+            <keep-alive key="keep-alive">
+              <router-view class="router-view"></router-view>
+            </keep-alive>
+          </div>
+          <router-view class="router-view" v-if="!$route.meta.keepAlive" key="not-keep-alive"></router-view>
+        </transition-group> -->
+        
+        <transition name="fade-transform">
+          <keep-alive>
+            <router-view v-if="$route.meta.keepAlive" :key="$route.meta.keepAlive"></router-view>
+          </keep-alive>
+        </transition>
+        <transition name="fade-transform">
+          <router-view v-if="!$route.meta.keepAlive" :key="!$route.meta.keepAlive"></router-view>
+        </transition>
+
+        <!-- <transition name="fade-transform">
+          <keep-alive>
+            <router-view v-if="$route.meta.alive"></router-view>
+          </keep-alive>
+        </transition>
+        <transition name="fade-transform">
+          <router-view v-if="!$route.meta.alive"></router-view>
+        </transition> -->
+
+        <!-- <transition-group>
+          <transition name="fade-transform" key='0'>
+            <keep-alive>
+              <router-view v-if="$route.meta.keepAlive" />=
+            </keep-alive>
+          </transition>
+          <transition name="fade-transform" key='1'>
+            <router-view v-if="!this.$route.meta.keepAlive" key='1' />
+          </transition>
+        </transition-group> -->
+
       </div>
-       
+
+
+
+
     </div>
+
+
   </div>
+
 </template>
 
 <script>
@@ -319,9 +402,11 @@
       }
 
       .nav {
-        padding: 15px;
-        height: calc(100vh - 90px);
-        background: rgb(1245, 242, 235);
+        // padding: 15px;
+        height: calc(100vh - 60px);
+        // background: rgb(1245, 242, 235);
+ 
+        overflow: auto;
       }
     }
   }
