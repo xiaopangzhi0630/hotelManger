@@ -171,12 +171,13 @@
           <router-view class="router-view" v-if="!$route.meta.keepAlive" key="not-keep-alive"></router-view>
         </transition-group> -->
         
-        <transition name="fade-transform">
+        <!-- <transition name="fade-transform" mode="out-in"> -->
+        <transition name="fade" mode="out-in">
           <keep-alive>
             <router-view v-if="$route.meta.keepAlive" :key="$route.meta.keepAlive"></router-view>
           </keep-alive>
         </transition>
-        <transition name="fade-transform">
+        <transition name="fade-transform" mode="out-in">
           <router-view v-if="!$route.meta.keepAlive" :key="!$route.meta.keepAlive"></router-view>
         </transition>
 
